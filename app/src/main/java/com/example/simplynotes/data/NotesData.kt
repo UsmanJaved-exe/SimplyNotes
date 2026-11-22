@@ -2,5 +2,6 @@ package com.example.simplynotes.data
 
 data class NotesData(
     val title: String,
-    val note: String,
+    val body: String,
+    val date: String
 )
