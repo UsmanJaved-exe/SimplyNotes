@@ -1,5 +1,6 @@
 package com.example.simplynotes.components
 
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -14,14 +15,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.simplynotes.data.NotesData
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun NotesCard() {
+fun NotesCard(item: NotesData) {
     Card(
         modifier = Modifier
             .padding(4.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .combinedClickable(
+                onClick = {},
+                onLongClick = {}
+            ),
         shape = MaterialTheme.shapes.medium,
     ) {
         Row(
@@ -42,7 +47,8 @@ fun NotesCard() {
 
                 Text(
                     text = "Note",
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
+                    maxLines = 2
                 )
 
                 Text(
@@ -52,11 +58,13 @@ fun NotesCard() {
             }
             Spacer(modifier = Modifier.padding(4.dp))
 
-            Checkbox(
-                checked = false,
-                onCheckedChange = {},
-                enabled = false
-            )
+
+                Checkbox(
+                    checked = false,
+                    onCheckedChange = {},
+                    enabled = false
+                )
+
         }
     }
 }
