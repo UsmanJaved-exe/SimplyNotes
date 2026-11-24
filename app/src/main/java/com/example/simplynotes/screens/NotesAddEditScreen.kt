@@ -1,0 +1,21 @@
+package com.example.simplynotes.screens
+
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.simplynotes.components.AppTopBarB
+import com.example.simplynotes.components.BottomAppBarPreview
+import com.example.simplynotes.components.NotesAddEditPanel
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun NotesListScreen() {
+    Scaffold(
+        modifier = Modifier,
+        topBar = { AppTopBarB() },
+        bottomBar = { BottomAppBarPreview() },
+    ) {innerPadding ->
+        NotesAddEditPanel(innerPadding)
+    }
+}
