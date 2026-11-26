@@ -13,15 +13,14 @@ import com.example.simplynotes.data.NotesData
 @OptIn(ExperimentalMaterial3Api::class)
 //@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun NotesListScreen(NotesData: List<NotesData>) {
+fun NotesListScreen(NotesData: List<NotesData>, toNotesAddEditPanel: () -> Unit) {
     Scaffold(
         modifier = Modifier,
         topBar = { AppTopBarA() },
-        bottomBar = { BottomAppBarPreview() },
-        floatingActionButton = { Fab() }
+        floatingActionButton = { Fab(toNotesAddEditPanel) }
 
     ) {innerPadding ->
-        NotesList(NotesData,innerPadding)
+        NotesList(NotesData,innerPadding,toNotesAddEditPanel)
     }
     }
 

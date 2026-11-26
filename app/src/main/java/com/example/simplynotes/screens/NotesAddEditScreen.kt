@@ -8,13 +8,12 @@ import com.example.simplynotes.components.AppTopBarB
 import com.example.simplynotes.components.BottomAppBarPreview
 import com.example.simplynotes.components.NotesAddEditPanel
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
-fun NotesListScreen() {
+fun NotesAddEditScreen(onBackClick: () -> Unit) {
     Scaffold(
         modifier = Modifier,
-        topBar = { AppTopBarB() },
-        bottomBar = { BottomAppBarPreview() },
+        topBar = { AppTopBarB() }
     ) {innerPadding ->
         NotesAddEditPanel(innerPadding)
     }

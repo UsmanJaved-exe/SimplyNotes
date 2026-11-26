@@ -22,7 +22,8 @@ fun NotesAddEditPanel(innerPadding: PaddingValues) {
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp)
+            .padding(innerPadding)
+            .padding()
     ) {
         TextField(
             modifier = Modifier
@@ -41,6 +42,9 @@ fun NotesAddEditPanel(innerPadding: PaddingValues) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             text = "Date",
             style = MaterialTheme.typography.labelSmall
         )
